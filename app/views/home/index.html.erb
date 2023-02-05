@@ -1,0 +1,92 @@
+<div class="jumbotron">
+  <h1 class="display-4">Jacob Butler Web Development Portfolio</h1>
+  <p class="lead">This web site has been built with Ruby on Rails. It is a full stack website that uses Devise Gem for log in and Rails to build Crud App. It has been styled with Bootstrap.</p>
+  <hr class="my-4">
+  <p>Please see the links below for details and examples of Information technology skills.</p>
+  <p><strong>Contact Details</strong> </p>
+  <p><strong>Email:</strong> jthomasbutler@gmail.com</p>
+  <p><strong>Phone:</strong>  022 436 9589</p>
+</div>
+
+
+
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <%= image_tag "webdev.jpeg", class:"card-img-top" %>
+      <h5 class="card-title">Web Development</h5>
+    <p class="card-text">I am competent in full stack web development with both HTML, CSS, JavaScript, NodeJS, SQL and Ruby on Rails. </p>
+      <%=link_to 'Web Development', 
+      home_webd_path, class:"btn btn-secondary" %>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <%= image_tag "cb1.jpg", class:"card-img-top" %>
+      <h5 class="card-title">Java</h5>
+    <p class="card-text">I am also effective in the use of the Java programming language and I am well versed in the Object orientated programming.</p>
+    <%=link_to 'Java', 
+      home_java_path, class:"btn btn-secondary" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br/>
+
+<div class="row">
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">About me</h5>
+        <p class="card-text">General stuff about me at and outside work. </p>
+                 <%=link_to 'About', 
+      home_about_path, class:"btn btn-secondary" %>
+      </div>
+    </div>
+  </div>
+    <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Show People</h5>
+        <p class="card-text">See the fictional and real people that have been added to database.</p>
+          <%=link_to 'Show people', people_path, class:"btn btn-secondary" %>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        
+
+         <% if user_signed_in? %> 
+
+            <h5 class="card-title">CRUD options</h5>
+        <p class="card-text">As you ae logged in, you can now take full CRUD actions. </p>
+       
+        <%=link_to 'Create', new_person_path, class:"btn btn-secondary" %>
+        <%=link_to 'Update ',edit_person_path(5), class:"btn btn-secondary" %>
+        <%=link_to 'Delete', person_path(4), class:"btn btn-secondary" %>
+
+
+         <% else %>
+
+        <h5 class="card-title">Sign Up</h5>
+        <p class="card-text">Sign up for an account and be able to access full CRUD features.</p>
+        <%= link_to "Sign Up", new_user_registration_path, class:"btn btn-secondary" %>
+
+
+         <% end %>
+
+         
+
+      </div>
+    </div>
+  </div>
+</div>
+<br/>
+<br/>

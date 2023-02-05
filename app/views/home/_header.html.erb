@@ -1,0 +1,100 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  
+
+ 
+        <%=link_to 'Portfolio home', 
+  root_path, class:"navbar-brand" %>
+
+ 
+                    
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+
+  
+               <li class="nav-item">
+         <%=link_to 'Web Development', 
+      home_webd_path, class:"nav-link" %>
+         </li>
+
+         <li class="nav-item">
+      	 <%=link_to 'Java', 
+      home_java_path, class:"nav-link" %>
+   
+      </li>
+
+           <li class="nav-item">
+         <%=link_to 'About', 
+      home_about_path, class:"nav-link" %>
+   
+      </li> 
+   
+
+
+ <li class="nav-item">
+  <%=link_to 'Show people', people_path, class:"nav-link" %>
+  </li>
+ 
+
+
+        <% if user_signed_in? %>
+
+    
+    
+
+       <li class="nav-item">
+      
+        <%= link_to "Sign out", destroy_user_session_path, data: {turbo_method: :delete}, class: 'nav-link' %>
+        </li>
+
+
+      
+        <li class="nav-item">
+         <%=link_to 'Edit Profile', 
+      edit_user_registration_path, class:"nav-link" %>
+         </li>
+
+      <li class="nav-item">
+   <%=link_to 'Create', new_person_path, class:"nav-link" %>  
+  </li>
+
+  
+
+<li class="nav-item">
+  <%=link_to 'Update ',edit_person_path(5), class:"nav-link" %>
+</li>
+
+<li class="nav-item">
+<%=link_to 'Delete',person_path(4), class:"nav-link" %>
+</li>
+
+
+<% else %>   
+
+        <li class="nav-item">
+          <%= link_to "Sign Up", new_user_registration_path, class:"nav-link" %>
+        </li>
+
+               <li class="nav-item">
+         <%=link_to 'Sign in', new_user_session_path, class:"nav-link" %>
+         </li>
+ 
+ <% end %>
+   
+  </ul>
+
+
+
+
+
+  </div>
+
+</div>
+
+
+
+</nav>
